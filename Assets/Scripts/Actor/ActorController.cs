@@ -292,4 +292,108 @@ public class ActorController : MonoBehaviour
             5.0f);      // 存在時間
     }
     #endregion
+
+    #region 特殊武器関連
+    ///summaly
+    ///射撃アクション:タックル
+    ///summaly
+    private void ShotAction_Tackle()
+    {
+        // 弾の方向を取得
+        float bulletAngle = 0.0f; // 右向き
+                                  // アクターが左向きなら弾も左向きに進む
+        if (!rightFacing)
+            bulletAngle = 180.0f;
+
+        // 弾丸オブジェクト生成・設定
+        GameObject obj = Instantiate(weaponBulletPrefabs[(int)ActorWeaponType.Tackle], transform.position, Quaternion.identity);
+        obj.GetComponent<ActorNormalShot>().Init(
+            20.0f, // 速度
+            bulletAngle, // 角度
+            1, // ダメージ量
+            0.3f, // 存在時間
+            nowWeapon); // 使用武器
+        if (!rightFacing)
+            obj.GetComponent<SpriteRenderer>().flipX = true;
+
+        // 主人公の突進移動
+        Vector3 moveVector = new Vector3(1.2f, 0.25f, 0.0f);
+        if (!rightFacing)
+            moveVector.x *= -1.0f;
+        rigidbody2D.MovePosition(transform.position + moveVector);
+        groundSensor.isGround = false;
+
+        // 無敵時間発生
+        invincibleTime = 0.6f;
+    }
+    ///<summary>
+    ///射撃アクション:雪玉
+    ///</summary>
+    private void ShotAction_IceBall()
+    {
+        //弾の初速ベクトル設定
+        Vector2 velocity = new Vector2(14.0f, 8.0f);
+        if (!rightFacing)
+            velocity.x *= -1.0f;
+
+        //弾丸オブジェクト生成・設定
+        GameObject obj = Instantiate(weaponBulletPrefabs[(int)ActorWeaponType.IceBall], transform.position, Quaternion.identity);
+            obj.GetComponent<ActorNormalShot>().Init(
+                0.0f, //速度(rigidbodyで弾を動かすので設定不要)
+                0.0f, //角度(rigidbodyで球を動かすので設定不要)
+                1, //ダメージ量
+                5.0f, //存在時間
+                newWeapon); //使用武器
+        obj.GetComponent<Rigidbody2D> ().velocity += velocity;
+    }
+
+    ///<summary>
+    ///射撃アクション:稲妻
+    ///</summary>
+    private void ShotAction_Lightning()
+    {
+        //弾の発射位置を設定（主人公の右上or左上）
+        Vector3 fixPos = new Vector3(4.0f, 5.0f, 0.0f);
+        if (!rightFacing)
+            fixPos.x *= -1.0f;
+
+        //弾丸オブジェクト生成・設定
+        GameObject obj = Instantiate(weaponBulletPrefabs[(int)ActorWeaponType.Lightning], transform.position + fixPos, Quaternion.identity);
+        obj.GetComponent<ActorNormalShot>().Init(
+            14.0f, //速度
+            270, //角度
+            2, //ダメージ量
+            5.0f, //存在時間
+            nowWeapon); //使用武器
+    }
+    ///<summary>
+    ///射撃アクション:水の輪
+    ///</summary>
+    private void ShotAction_WaterRing ()
+    {
+        //弾丸オブジェクト生成・設定
+        int bulletNum_Angle = 8; //発射方向数
+        for (int i = 0; i < bulletNum_Angle; i++)
+        {
+            GameObject obj = Instantiate(weaponBulletPrefabs[(int)ActorWeaponType.WaterRing], transform.position, Quaternion.identity);
+            obj.GetComponent<ActorNormalShot>().Init(
+                3.0f, //速度
+                (360 / bulletNum_Angle) * i, //角度
+                1, //ダメージ量
+                2.0f, //存在時間
+                nowWeapon); //使用武器
+        }
+    }
+    ///<summary>
+    ///射撃アクションレーザー
+    ///</summary>
+    private void ShotAction_Laser ()
+    {
+        ///レーザーオブジェクト生成・設定
+        GameObject obj = Instantiate(weaponBulletPrefabs[(int)ActorWeaponType.Laser], transform.position, Quaternion.identity);
+        obj.GetComponent<ActorLaser>().Init(
+            1, //ダメージ量
+            1.0f); //存在時間
+    }
+    #endregion
 }

@@ -124,52 +124,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3628784134516765410, guid: 4ecb434f149347c4096f65a3c57329bc, type: 3}
   m_PrefabInstance: {fileID: 6861997212336337932}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1128804825
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1128804827}
-  - component: {fileID: 1128804826}
-  m_Layer: 0
-  m_Name: BulletPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1128804826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128804825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9446ced892af95d41a8c0e56b3175c49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: -7687494836686625317, guid: eab9e7aa4d779b741a7c104df7e4d85a, type: 3}
-  poolSize: 20
---- !u!4 &1128804827
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128804825}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1362557273
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,14 +400,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 682323956435931500, guid: 4ecb434f149347c4096f65a3c57329bc, type: 3}
-      propertyPath: bulletPool
-      value: 
-      objectReference: {fileID: 1128804826}
-    - target: {fileID: 3177671958584095515, guid: 4ecb434f149347c4096f65a3c57329bc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3628784134516765410, guid: 4ecb434f149347c4096f65a3c57329bc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -570,6 +516,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 7570355032413119465}
   - {fileID: 6861997212336337932}
-  - {fileID: 1128804827}
   - {fileID: 2017976528}
   - {fileID: 1362557275}

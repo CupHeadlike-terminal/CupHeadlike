@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Actor
   - Enemy
+  - Actor_Shot
   layers:
   - Default
   - TransparentFX
