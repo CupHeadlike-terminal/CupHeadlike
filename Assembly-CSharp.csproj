@@ -64,7 +64,9 @@
     <Compile Include="Assets\Scripts\Enemy\Enemy_Bee.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy_Snake.cs" />
     <Compile Include="Assets\Scripts\CameraMovingLimitter.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Enemy_Wolf.cs" />
     <Compile Include="Assets\Scripts\Gimmic\Gimmic_JumpBlock.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Enemy_Frog.cs" />
     <Compile Include="Assets\Scripts\Actor\ActorSprite.cs" />
     <Compile Include="Assets\Scripts\Gimmic\Gimmic_HiddenWall.cs" />
     <Compile Include="Assets\Scripts\StageManager.cs" />
