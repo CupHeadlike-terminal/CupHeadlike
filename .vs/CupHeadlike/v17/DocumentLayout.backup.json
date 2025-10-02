@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\terminal\\CupHeadlike\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|c:\\terminal\\cupheadlike\\assets\\scripts\\areamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\areamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|C:\\terminal\\CupHeadlike\\assets\\scripts\\actor\\actorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\actor\\actorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|c:\\terminal\\cupheadlike\\assets\\scripts\\areamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\areamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AreaManager.cs",
               "DocumentMoniker": "C:\\terminal\\CupHeadlike\\Assets\\Scripts\\AreaManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AreaManager.cs",
               "ToolTip": "C:\\terminal\\CupHeadlike\\Assets\\Scripts\\AreaManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\AreaManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-30T14:31:59.121Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ActorController.cs",
               "DocumentMoniker": "C:\\terminal\\CupHeadlike\\Assets\\Scripts\\Actor\\ActorController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Actor\\ActorController.cs",
               "ToolTip": "C:\\terminal\\CupHeadlike\\Assets\\Scripts\\Actor\\ActorController.cs",
               "RelativeToolTip": "Assets\\Scripts\\Actor\\ActorController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAO0AAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAACIAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T09:17:16.631Z"
+              "WhenOpened": "2025-09-18T09:17:16.631Z",
+              "EditorCaption": ""
             }
           ]
         }

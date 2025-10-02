@@ -14,6 +14,7 @@ public class EnemyBase : MonoBehaviour
     protected Rigidbody2D rigidbody2D; // RigidBody2D
     protected SpriteRenderer spriteRenderer;// 敵スプライト
     protected Transform actorTransform; // 主人公(アクター)のTransform
+    protected Image bossHPGage; // ボス用HPゲージ
 
     // 画像素材
     public Sprite sprite_Defeat; // 被撃破時スプライト(あれば)
@@ -72,6 +73,10 @@ public class EnemyBase : MonoBehaviour
         // ボス敵用処理
         if (isBoss)
         {
+            // HPゲージ表示
+            areaManager.stageManager.bossHPGage.transform.parent.gameObject.SetActive(true);
+            bossHPGage = areaManager.stageManager.bossHPGage;
+            bossHPGage.fillAmount = 1.0f;
             // BGM再生
             areaManager.stageManager.PlayBossBGM();
         }
@@ -90,6 +95,12 @@ public class EnemyBase : MonoBehaviour
 
         // ダメージ処理
         nowHP -= damage;
+        // (ボス用)HPゲージの表示を更新する
+        if (bossHPGage != null)
+        {
+            float hpRatio = (float)nowHP / maxHP;
+            bossHPGage.DOFillAmount(hpRatio, 0.5f);
+        }
 
         if (nowHP <= 0)
         {// HP0の場合

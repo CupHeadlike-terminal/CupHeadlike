@@ -1,7 +1,8 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
 
 /// <summary>
 /// アクター操作・制御クラス
@@ -15,6 +16,7 @@ public class ActorController : MonoBehaviour
     private ActorSprite actorSprite; // アクタースプライト設定クラス
     public CameraController cameraController; // カメラ制御クラス
     public GameObject weaponBulletPrefab; // 弾プレハブ
+    public Image hpGage; // HPゲージ
 
     // 体力変数
     [HideInInspector] public int nowHP; // 現在HP
@@ -57,6 +59,7 @@ public class ActorController : MonoBehaviour
         // 変数初期化
         rightFacing = true; // 最初は右向き
         nowHP = maxHP = InitialHP;
+        hpGage.fillAmount = 1.0f; // HPゲージの初期FillAmount
     }
 
     // Update（1フレームごとに1度ずつ実行）
@@ -252,6 +255,9 @@ public class ActorController : MonoBehaviour
 
         // ダメージ処理
         nowHP -= damage;
+        // HPゲージの表示を更新する
+        float hpRatio = (float)nowHP / maxHP;
+        hpGage.DOFillAmount(hpRatio, 0.5f);
 
         // HP0ならゲームオーバー処理
         if (nowHP <= 0)
@@ -263,6 +269,8 @@ public class ActorController : MonoBehaviour
             rigidbody2D.linearVelocity = Vector2.zero;
             xSpeed = 0.0f;
             rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
+            // ゲームオーバー処理
+            GetComponentInParent<StageManager>().GameOver();
             return;
         }
 

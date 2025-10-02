@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using DG.Tweening;
 
 /// <summary>
@@ -10,6 +11,7 @@ public class StageManager : MonoBehaviour
 {
     [HideInInspector] public ActorController actorController; // アクター制御クラス
     [HideInInspector] public CameraController cameraController; // カメラ制御クラス
+    public Image bossHPGage; // ボス用HPゲージImage
 
     [Header("初期エリアのAreaManager")]
     public AreaManager initArea; // ステージ内の最初のエリア(初期エリア)
@@ -33,6 +35,9 @@ public class StageManager : MonoBehaviour
 
         // 初期エリアをアクティブ化(その他のエリアは全て無効化)
         initArea.ActiveArea();
+
+        // UI初期化
+        bossHPGage.transform.parent.gameObject.SetActive(false);
     }
 
     /// <summary>

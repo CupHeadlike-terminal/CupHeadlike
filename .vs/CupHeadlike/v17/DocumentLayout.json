@@ -3,11 +3,19 @@
   "WorkspaceRootPath": "C:\\terminal\\CupHeadlike\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|C:\\terminal\\CupHeadlike\\assets\\scripts\\actor\\actorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|c:\\terminal\\cupheadlike\\assets\\scripts\\stagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\stagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|c:\\terminal\\cupheadlike\\assets\\scripts\\actor\\actorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\actor\\actorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|c:\\terminal\\cupheadlike\\assets\\scripts\\areamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|c:\\terminal\\cupheadlike\\assets\\scripts\\enemy\\enemybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy\\enemybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|C:\\terminal\\CupHeadlike\\assets\\scripts\\areamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\areamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -22,7 +30,33 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "EnemyBase.cs",
+              "DocumentMoniker": "C:\\terminal\\CupHeadlike\\Assets\\Scripts\\Enemy\\EnemyBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy\\EnemyBase.cs",
+              "ToolTip": "C:\\terminal\\CupHeadlike\\Assets\\Scripts\\Enemy\\EnemyBase.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Enemy\\EnemyBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGIAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T14:34:14.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StageManager.cs",
+              "DocumentMoniker": "C:\\terminal\\CupHeadlike\\Assets\\Scripts\\StageManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\StageManager.cs",
+              "ToolTip": "C:\\terminal\\CupHeadlike\\Assets\\Scripts\\StageManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\StageManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T14:31:38.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AreaManager.cs",
               "DocumentMoniker": "C:\\terminal\\CupHeadlike\\Assets\\Scripts\\AreaManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AreaManager.cs",
@@ -30,18 +64,17 @@
               "RelativeToolTip": "Assets\\Scripts\\AreaManager.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-30T14:31:59.121Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-30T14:31:59.121Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ActorController.cs",
               "DocumentMoniker": "C:\\terminal\\CupHeadlike\\Assets\\Scripts\\Actor\\ActorController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Actor\\ActorController.cs",
               "ToolTip": "C:\\terminal\\CupHeadlike\\Assets\\Scripts\\Actor\\ActorController.cs",
               "RelativeToolTip": "Assets\\Scripts\\Actor\\ActorController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAAACIAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAACwBAAAAAAAAAAAAAEwBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-18T09:17:16.631Z",
               "EditorCaption": ""
