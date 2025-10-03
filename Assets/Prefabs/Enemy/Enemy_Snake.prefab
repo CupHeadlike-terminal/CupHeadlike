@@ -181,13 +181,14 @@ MonoBehaviour:
   maxHP: 3
   touchDamage: 2
   isBoss: 0
+  bossDefeatParticlePrefab: {fileID: 0}
   nowHP: 0
   isVanishing: 0
   isInvis: 0
   rightFacing: 0
   movingSpeed: 3
   maxSpeed: 5
-  awakeDistance: 3
+  awakeDistance: 6
   brakeRatio: 0.9
 --- !u!1001 &6235795591619286871
 PrefabInstance:

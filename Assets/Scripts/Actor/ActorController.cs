@@ -28,6 +28,8 @@ public class ActorController : MonoBehaviour
     public List<int> weaponEnergyCosts;
     [Header("各武器の連射間隔(秒)")]
     public List<float> weaponIntervals;
+    public GameObject weaponBulletPrefab; // 弾プレハブ
+    public Image hpGage; // HPゲージ
 
     // 体力変数
     [HideInInspector] public int nowHP; // 現在HP
@@ -47,6 +49,7 @@ public class ActorController : MonoBehaviour
     private float remainStuckTime; // 残り硬直時間(0以上だと行動できない)
     private float invincibleTime;   // 残り無敵時間(秒)
     [HideInInspector] public bool isDefeat; // true:撃破された(ゲームオーバー)
+    [HideInInspector] public bool inWaterMode; // true:水中モード(メソッドから変更)
 
     // 定数定義
     private const int InitialHP = 20;           // 初期HP(最大HP)
@@ -54,6 +57,8 @@ public class ActorController : MonoBehaviour
     private const float InvicibleTime = 2.0f;   // 被ダメージ直後の無敵時間(秒)
     private const float StuckTime = 0.5f;       // 被ダメージ直後の硬直時間(秒)
     private const float KnockBack_X = 2.5f;     // 被ダメージ時ノックバック力(x方向)
+    private const float WaterModeDecelerate_X = 0.8f;// 水中でのX方向速度倍率
+    private const float WaterModeDecelerate_Y = 0.92f;// 水中でのY方向速度倍率
 
     // アクター装備定義
     public enum ActorWeaponType
@@ -91,7 +96,8 @@ public class ActorController : MonoBehaviour
 
         // 変数初期化
         rightFacing = true; // 最初は右向き
-        nowHP = maxHP = InitialHP; // 初期HP
+        nowHP = maxHP = InitialHP;
+        hpGage.fillAmount = 1.0f; // HPゲージの初期FillAmount
     }
 
     // Update（1フレームごとに1度ずつ実行）
@@ -206,8 +212,8 @@ public class ActorController : MonoBehaviour
         // ジャンプ操作
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {// ジャンプ開始
-         // 接地していないなら終了
-            if (!groundSensor.isGround)
+         // 接地していないなら終了(水中であれば続行)
+            if (!groundSensor.isGround && !inWaterMode)
                 return;
 
             // ジャンプ力を計算
@@ -246,8 +252,34 @@ public class ActorController : MonoBehaviour
         // X方向の速度を入力から決定
         velocity.x = xSpeed;
 
+        // 水中モードでの速度
+        if (inWaterMode)
+        {
+            velocity.x *= WaterModeDecelerate_X;
+            velocity.y *= WaterModeDecelerate_Y;
+        }
+
         // 計算した移動速度ベクトルをRigidbody2Dに反映
         rigidbody2D.linearVelocity = velocity;
+    }
+
+    /// <summary>
+    /// 水中モードをセットする
+    /// </summary>
+    /// <param name="mode">true:水中にいる</param>
+    public void SetWaterMode(bool mode)
+    {
+        // 水中モード
+        inWaterMode = mode;
+        // 水中での重力
+        if (inWaterMode)
+        {
+            rigidbody2D.gravityScale = 0.3f;
+        }
+        else
+        {
+            rigidbody2D.gravityScale = 1.0f;
+        }
     }
     #endregion
 
@@ -313,6 +345,9 @@ public class ActorController : MonoBehaviour
 
         // ダメージ処理
         nowHP -= damage;
+        // HPゲージの表示を更新する
+        float hpRatio = (float)nowHP / maxHP;
+        hpGage.DOFillAmount(hpRatio, 0.5f);
 
         // HP0ならゲームオーバー処理
         if (nowHP <= 0)
@@ -324,6 +359,8 @@ public class ActorController : MonoBehaviour
             rigidbody2D.linearVelocity = Vector2.zero;
             xSpeed = 0.0f;
             rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
+            // ゲームオーバー処理
+            GetComponentInParent<StageManager>().GameOver();
             return;
         }
 

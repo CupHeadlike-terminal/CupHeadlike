@@ -7,28 +7,20 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Actor\\ActorSprite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kenshinu\\Desktop\\caphead\\CupHeadlike\\Assets\\Scripts\\StageManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\StageManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kenshinu\\Desktop\\caphead\\CupHeadlike\\Assets\\Scripts\\Actor\\ActorController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Actor\\ActorController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kenshinu\\Desktop\\caphead\\CupHeadlike\\Assets\\Scripts\\ActorNormalShot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\ActorNormalShot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kenshinu\\Desktop\\caphead\\CupHeadlike\\Assets\\Scripts\\CameraController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\CameraController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kenshinu\\Desktop\\caphead\\CupHeadlike\\Assets\\Scripts\\ActorWindBlowShot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\ActorWindBlowShot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kenshinu\\Desktop\\caphead\\CupHeadlike\\Assets\\Scripts\\StageManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\StageManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kenshinu\\Desktop\\caphead\\CupHeadlike\\Assets\\Scripts\\Actor\\ActorWindBlowShot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Actor\\ActorWindBlowShot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kenshinu\\Desktop\\caphead\\CupHeadlike\\Assets\\Scripts\\CameraController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\CameraController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kenshinu\\Desktop\\caphead\\CupHeadlike\\Assets\\Scripts\\ActorLaser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -57,11 +49,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "CameraController.cs",
               "DocumentMoniker": "C:\\Users\\kenshinu\\Desktop\\caphead\\CupHeadlike\\Assets\\Scripts\\CameraController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CameraController.cs",
@@ -69,23 +61,12 @@
               "RelativeToolTip": "Assets\\Scripts\\CameraController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T05:46:55.878Z"
+              "WhenOpened": "2025-09-27T05:46:55.878Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ActorNormalShot.cs",
-              "DocumentMoniker": "C:\\Users\\kenshinu\\Desktop\\caphead\\CupHeadlike\\Assets\\Scripts\\ActorNormalShot.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ActorNormalShot.cs",
-              "ToolTip": "C:\\Users\\kenshinu\\Desktop\\caphead\\CupHeadlike\\Assets\\Scripts\\ActorNormalShot.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ActorNormalShot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-26T01:54:17.049Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "ActorWindBlowShot.cs",
               "DocumentMoniker": "C:\\Users\\kenshinu\\Desktop\\caphead\\CupHeadlike\\Assets\\Scripts\\ActorWindBlowShot.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ActorWindBlowShot.cs",
@@ -93,23 +74,25 @@
               "RelativeToolTip": "Assets\\Scripts\\ActorWindBlowShot.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-25T06:08:55.682Z"
+              "WhenOpened": "2025-09-25T06:08:55.682Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ActorController.cs",
               "DocumentMoniker": "C:\\Users\\kenshinu\\Desktop\\caphead\\CupHeadlike\\Assets\\Scripts\\Actor\\ActorController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Actor\\ActorController.cs",
               "ToolTip": "C:\\Users\\kenshinu\\Desktop\\caphead\\CupHeadlike\\Assets\\Scripts\\Actor\\ActorController.cs",
               "RelativeToolTip": "Assets\\Scripts\\Actor\\ActorController.cs",
-              "ViewState": "AgIAAJUBAAAAAAAAAAAAAKYBAACAAAAAAAAAAA==",
+              "ViewState": "AgIAACACAAAAAAAAAAAAAMsBAACAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T09:17:16.631Z"
+              "WhenOpened": "2025-09-18T09:17:16.631Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "StageManager.cs",
               "DocumentMoniker": "C:\\Users\\kenshinu\\Desktop\\caphead\\CupHeadlike\\Assets\\Scripts\\StageManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\StageManager.cs",
@@ -117,7 +100,8 @@
               "RelativeToolTip": "Assets\\Scripts\\StageManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-19T02:52:38.181Z"
+              "WhenOpened": "2025-09-19T02:52:38.181Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -127,7 +111,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Actor\\ActorSprite.cs",
               "ToolTip": "C:\\Users\\kenshinu\\Desktop\\caphead\\CupHeadlike\\Assets\\Scripts\\Actor\\ActorSprite.cs",
               "RelativeToolTip": "Assets\\Scripts\\Actor\\ActorSprite.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAG4AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAAG4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-19T07:33:45.221Z",
               "EditorCaption": ""
@@ -135,17 +119,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "ActorWindBlowShot.cs",
-              "DocumentMoniker": "C:\\Users\\kenshinu\\Desktop\\caphead\\CupHeadlike\\Assets\\Scripts\\Actor\\ActorWindBlowShot.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Actor\\ActorWindBlowShot.cs",
-              "ToolTip": "C:\\Users\\kenshinu\\Desktop\\caphead\\CupHeadlike\\Assets\\Scripts\\Actor\\ActorWindBlowShot.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Actor\\ActorWindBlowShot.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T03:10:36.02Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "EnemyBodyAttack.cs",
               "DocumentMoniker": "C:\\Users\\kenshinu\\Desktop\\caphead\\CupHeadlike\\Assets\\Scripts\\Enemy\\EnemyBodyAttack.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy\\EnemyBodyAttack.cs",
@@ -157,7 +130,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "Enemy_Snake.cs",
               "DocumentMoniker": "C:\\Users\\kenshinu\\Desktop\\caphead\\CupHeadlike\\Assets\\Scripts\\Enemy\\Enemy_Snake.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy\\Enemy_Snake.cs",
@@ -169,7 +142,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "ActorLaser.cs",
               "DocumentMoniker": "C:\\Users\\kenshinu\\Desktop\\caphead\\CupHeadlike\\Assets\\Scripts\\ActorLaser.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ActorLaser.cs",
@@ -181,7 +154,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 9,
               "Title": "EnemyBase.cs",
               "DocumentMoniker": "C:\\Users\\kenshinu\\Desktop\\caphead\\CupHeadlike\\Assets\\Scripts\\Enemy\\EnemyBase.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy\\EnemyBase.cs",
@@ -193,7 +166,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
               "Title": "Camera Controller.cs",
               "DocumentMoniker": "C:\\terminal\\CupHeadlike\\Assets\\Scripts\\Camera Controller.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\terminal\\CupHeadlike\\Assets\\Scripts\\Camera Controller.cs",
