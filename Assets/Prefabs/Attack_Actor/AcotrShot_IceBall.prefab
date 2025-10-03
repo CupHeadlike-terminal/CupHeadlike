@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6452355121290731833}
   - component: {fileID: 7868721715274078467}
   - component: {fileID: -987060468290687528}
+  - component: {fileID: 5170910906594425705}
   m_Layer: 0
   m_Name: AcotrShot_IceBall
   m_TagString: Untagged
@@ -152,3 +153,15 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.25
+--- !u!114 &5170910906594425705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7500217931469745000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aba2e2f190b12814d9f203e009bae4d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

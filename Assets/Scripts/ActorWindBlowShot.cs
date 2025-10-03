@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// ƒAƒNƒ^[“Ë•—’eƒNƒ‰ƒX
+/// ï¿½Aï¿½Nï¿½^ï¿½[ï¿½Ë•ï¿½ï¿½eï¿½Nï¿½ï¿½ï¿½X
 /// </summary>
 public class ActorWindBlowShot : ActorNormalShot
 {
     /// <summary>
-    /// (Œp³‚µ‚Äg—pj‚±‚Ì’e‚ª“G‚Éƒ_ƒ[ƒW‚ğ—^‚¦‚½‚Æ‚«‚Ì’Ç‰Áˆ—
+    /// (ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½Ägï¿½pï¿½jï¿½ï¿½ï¿½Ì’eï¿½ï¿½ï¿½Gï¿½Éƒ_ï¿½ï¿½ï¿½[ï¿½Wï¿½ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½Ì’Ç‰ï¿½ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     protected override void OnDamagedEnemy (EnemyBase enemyBase)
     {
         Vector2 blowVector = new Vector2(10.0f, 7.0f);
-        //’e‚ª¶‚Éi‚ñ‚Å‚¢‚é‚È‚çƒxƒNƒgƒ‹‚à¶‰E”½“]
+        //ï¿½eï¿½ï¿½ï¿½ï¿½ï¿½Éiï¿½ï¿½Å‚ï¿½ï¿½ï¿½È‚ï¿½xï¿½Nï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Eï¿½ï¿½ï¿½]
         if (angle > 90)
             blowVector.x *= -1.0f;
 
-        //“G‚ğ‚«”ò‚Î‚·(‘Î‚´‚±‚Ì‚İ)
+        //ï¿½Gï¿½ğ‚ï¿½ï¿½ï¿½Î‚ï¿½(ï¿½Î‚ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½)
         if(!enemyBase.isBoss)
-            enemyBase.GetComponent<Rigidbody2D> ().velocity += blowVector;
+            enemyBase.GetComponent<Rigidbody2D> ().linearVelocity += blowVector;
     }
 }

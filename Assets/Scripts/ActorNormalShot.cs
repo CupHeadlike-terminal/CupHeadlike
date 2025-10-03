@@ -13,6 +13,7 @@ public class ActorNormalShot : MonoBehaviour
     protected float angle;      // 角度(0-360)0で右・90で上
     protected int damage;       // 命中時のダメージ
     protected float limitTime;  // 存在時間(秒)この時間が過ぎると消滅
+    protected ActorController.ActorWeaponType useWeapon; // この弾を発射するのに使用した武器
 
     /// <summary>
     /// 初期化関数(生成元から呼出)
@@ -21,13 +22,15 @@ public class ActorNormalShot : MonoBehaviour
     /// <param name="_angle">角度</param>
     /// <param name="_damage">命中時のダメージ</param>
     /// <param name="_limitTime">存在時間(秒)</param>
-    public void Init(float _speed, float _angle, int _damage, float _limitTime)
+    /// <param name="_useWeapon">使用武器</param>
+	public void Init(float _speed, float _angle, int _damage, float _limitTime, ActorController.ActorWeaponType _useWeapon)
     {
         // 変数取得
         speed = _speed;
         angle = _angle;
         damage = _damage;
         limitTime = _limitTime;
+        useWeapon = _useWeapon;
     }
 
     // Update
@@ -47,6 +50,12 @@ public class ActorNormalShot : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    /// <summary>
+	/// (継承して使用)この弾が敵にダメージを与えた時の追加処理
+	/// </summary>
+	protected virtual void OnDamagedEnemy(EnemyBase enemyBase)
+    {
+    }
 
     // 各トリガー呼び出し処理
     // トリガー進入時に呼出
@@ -64,6 +73,8 @@ public class ActorNormalShot : MonoBehaviour
                                                          // ダメージを与えられたなら弾オブジェクト削除
                 if (result)
                 {
+                    // 追加処理
+                    OnDamagedEnemy(enemyBase);
                     // この弾を削除
                     Destroy(gameObject);
                 }

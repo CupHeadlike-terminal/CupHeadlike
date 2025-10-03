@@ -10,6 +10,7 @@ public class ActorSprite : MonoBehaviour
 {
     private ActorController actorController; // アクター制御クラス
     private SpriteRenderer spriteRenderer; // アクターのSpriteRenderer
+    public GameObject defeatParticlePrefab = null; // 被撃破パーティクルPrefab
 
     // 画像素材参照
     public List<Sprite> walkAnimationRes; // 歩行アニメーション(装備別*コマ数)
@@ -44,6 +45,7 @@ public class ActorSprite : MonoBehaviour
         if (stuckMode)
         {
             spriteRenderer.sprite = stuckSpriteRes[0];
+            spriteRenderer.sprite = stuckSpriteRes[(int)actorController.nowWeapon];
             return;
         }
 
@@ -82,6 +84,9 @@ public class ActorSprite : MonoBehaviour
     /// </summary>
     public void StartDefeatAnim()
     {
+        // 被撃破パーティクルを生成
+        var obj = Instantiate(defeatParticlePrefab);
+        obj.transform.position = transform.position;
         // 被撃破スプライト表示
         spriteRenderer.sprite = stuckSpriteRes[0];
         // 点滅演出終了

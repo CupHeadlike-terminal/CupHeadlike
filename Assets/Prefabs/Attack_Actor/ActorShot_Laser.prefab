@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 625507652398287148}
   - component: {fileID: 1624711003030614248}
   - component: {fileID: 8027284613437842554}
+  - component: {fileID: -5308322821501955649}
   m_Layer: 0
   m_Name: ActorShot_Laser
   m_TagString: Untagged
@@ -134,3 +135,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.01, y: 0.01}
   m_EdgeRadius: 0
+--- !u!114 &-5308322821501955649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3571028055265884727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c7c076fd5bd894abb2e46c3a69a137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

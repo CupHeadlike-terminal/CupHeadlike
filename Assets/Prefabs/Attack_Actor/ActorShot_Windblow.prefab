@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2696312580521563482}
   - component: {fileID: 2639282081048792444}
   - component: {fileID: 5381821972644402136}
+  - component: {fileID: 7533063803498381308}
   m_Layer: 0
   m_Name: ActorShot_Windblow
   m_TagString: Untagged
@@ -124,3 +125,15 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.38
+--- !u!114 &7533063803498381308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033282554914439608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e043cc8c9f4b9b64f932d4159191a7d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
 
 /// <summary>
 /// アクター操作・制御クラス
@@ -13,11 +15,28 @@ public class ActorController : MonoBehaviour
     private ActorGroundSensor groundSensor; // アクター接地判定クラス
     private ActorSprite actorSprite; // アクタースプライト設定クラス
     public CameraController cameraController; // カメラ制御クラス
-    public GameObject weaponBulletPrefab; // 弾プレハブ
+    public Image energyGage = null; // 武器エネルギーゲージ
+    public Image energyGageIcon = null; // 武器エネルギーゲージアイコン
+
+    [Header("各武器で使用するプレハブリスト(定義の順番に設定)")]
+    public List<GameObject> weaponBulletPrefabs;
+    [Header("各武器のエネルギーゲージの画像")]
+    public List<Sprite> weaponIconSprites;
+    [Header("各武器のエネルギーゲージの色")]
+    public List<Color> weaponGageColors;
+    [Header("各武器の消費エネルギー量")]
+    public List<int> weaponEnergyCosts;
+    [Header("各武器の連射間隔(秒)")]
+    public List<float> weaponIntervals;
 
     // 体力変数
     [HideInInspector] public int nowHP; // 現在HP
     [HideInInspector] public int maxHP; // 最大HP
+
+    // 装備変数
+    [HideInInspector] public ActorWeaponType nowWeapon;
+    private int[] weaponEnergies; // 武器の残りエネルギーデータ(それぞれ最大値がMaxEnergy)
+    private float weaponRemainInterval; // 武器が次に発射可能になるまでの残り時間(秒)
 
     // 移動関連変数
     [HideInInspector] public float xSpeed; // X方向移動速度
@@ -31,9 +50,23 @@ public class ActorController : MonoBehaviour
 
     // 定数定義
     private const int InitialHP = 20;           // 初期HP(最大HP)
+    private const int MaxEnergy = 20;			// 武器エネルギーの最大値
     private const float InvicibleTime = 2.0f;   // 被ダメージ直後の無敵時間(秒)
     private const float StuckTime = 0.5f;       // 被ダメージ直後の硬直時間(秒)
     private const float KnockBack_X = 2.5f;     // 被ダメージ時ノックバック力(x方向)
+
+    // アクター装備定義
+    public enum ActorWeaponType
+    {
+        Normal,     // (通常)
+        Tackle,     // タックル
+        Windblow,   // 突風
+        IceBall,    // 雪玉
+        Lightning,  // 稲妻
+        WaterRing,  // 水の輪
+        Laser,      // レーザー
+        _Max,
+    }
 
     // Start（オブジェクト有効化時に1度実行）
     void Start()
@@ -49,6 +82,12 @@ public class ActorController : MonoBehaviour
 
         // カメラ初期位置
         cameraController.SetPosition(transform.position);
+
+        // 武器エネルギー初期化
+        weaponEnergies = new int[(int)ActorWeaponType._Max];
+        for (int i = 0; i < (int)ActorWeaponType._Max; i++)
+            weaponEnergies[i] = MaxEnergy;
+        ApplyWeaponChange(); // 初期装備を反映
 
         // 変数初期化
         rightFacing = true; // 最初は右向き
@@ -87,6 +126,13 @@ public class ActorController : MonoBehaviour
         MoveUpdate();
         // ジャンプ入力処理
         JumpUpdate();
+
+        // 武器切り替え処理
+        ChangeWeaponUpdate();
+
+        // 攻撃可能までの残り時間減少
+        if (weaponRemainInterval > 0.0f)
+            weaponRemainInterval -= Time.deltaTime;
 
         // 攻撃入力処理
         StartShotAction();
@@ -205,6 +251,51 @@ public class ActorController : MonoBehaviour
     }
     #endregion
 
+    #region 装備関連
+	/// <summary>
+	/// Updateから呼び出される武器切り替え処理
+	/// </summary>
+	private void ChangeWeaponUpdate ()
+	{
+		// 武器切り替え
+		if (Input.GetKeyDown (KeyCode.A))
+		{// 1つ前に切り替え
+			if (nowWeapon == ActorWeaponType.Normal)
+				nowWeapon = ActorWeaponType._Max;
+			nowWeapon--;
+			// 武器変更を反映
+			ApplyWeaponChange ();
+		}
+		else if (Input.GetKeyDown (KeyCode.S))
+		{// 1つ次に切り替え
+			nowWeapon++;
+			if (nowWeapon == ActorWeaponType._Max)
+				nowWeapon = ActorWeaponType.Normal;
+			// 武器変更を反映
+			ApplyWeaponChange ();
+		}
+	}
+ 
+	/// <summary>
+	/// 特殊武器の変更を反映する
+	/// </summary>
+	public void ApplyWeaponChange ()
+	{
+		// エネルギーゲージ表示(通常武器以外)
+		if (nowWeapon == ActorWeaponType.Normal)
+			energyGage.transform.parent.gameObject.SetActive (false);
+		else
+			energyGage.transform.parent.gameObject.SetActive (true);
+ 
+		// ゲージの色を反映
+		energyGage.color = weaponGageColors[(int)nowWeapon];
+		// ゲージの量を反映
+		energyGage.fillAmount = (float)weaponEnergies[(int)nowWeapon] / MaxEnergy;
+		// ゲージのアイコンを設定
+		energyGageIcon.sprite = weaponIconSprites[(int)nowWeapon];
+	}
+	#endregion
+
     #region 戦闘関連
     /// <summary>
     /// ダメージを受ける際に呼び出される
@@ -263,6 +354,55 @@ public class ActorController : MonoBehaviour
         if (!Input.GetKeyDown(KeyCode.Z))
             return;
 
+        // 武器エネルギーが足りないなら攻撃しない
+        if (weaponEnergies[(int)nowWeapon] <= 0)
+            return;
+        // 攻撃可能までの時間が残っているなら終了
+        if (weaponRemainInterval > 0.0f)
+            return;
+
+        // 武器エネルギー減少
+        weaponEnergies[(int)nowWeapon] -= weaponEnergyCosts[(int)nowWeapon];
+        if (weaponEnergies[(int)nowWeapon] < 0)
+            weaponEnergies[(int)nowWeapon] = 0;
+        // 武器エネルギーゲージ表示更新
+        energyGage.fillAmount = (float)weaponEnergies[(int)nowWeapon] / MaxEnergy;
+        // 次弾発射可能までの残り時間設定
+        weaponRemainInterval = weaponIntervals[(int)nowWeapon];
+
+        // 攻撃を発射
+        switch (nowWeapon)
+        {
+            case ActorWeaponType.Normal:
+                // 通常攻撃
+                ShotAction_Normal();
+                break;
+            case ActorWeaponType.Tackle:
+                // タックル
+                ShotAction_Tackle();
+                break;
+            case ActorWeaponType.Windblow:
+                // 突風
+                ShotAction_Windblow();
+                break;
+            case ActorWeaponType.IceBall:
+                // 雪玉
+                ShotAction_IceBall();
+                break;
+            case ActorWeaponType.Lightning:
+                // 稲妻
+                ShotAction_Lightning();
+                break;
+            case ActorWeaponType.WaterRing:
+                // 水の輪
+                ShotAction_WaterRing();
+                break;
+            case ActorWeaponType.Laser:
+                // レーザー
+                ShotAction_Laser();
+                break;
+        }
+
         // このメソッド内で選択武器別のメソッドの呼び分けやエネルギー消費処理を行う。
         // 現在は初期武器のみなのでShotAction_Normalを呼び出すだけ
         ShotAction_Normal();
@@ -280,16 +420,13 @@ public class ActorController : MonoBehaviour
             bulletAngle = 180.0f;
 
         // 弾丸オブジェクト生成・設定
-        GameObject obj = Instantiate( // オブジェクト新規生成
-            weaponBulletPrefab,     // 生成するオブジェクトのプレハブ
-            transform.position,     // 生成したオブジェクトの初期座標
-            Quaternion.identity);   // 初期Rotation(傾き)
-                                    // 弾丸設定
+        GameObject obj = Instantiate(weaponBulletPrefabs[(int)ActorWeaponType.Normal], transform.position, Quaternion.identity);
         obj.GetComponent<ActorNormalShot>().Init(
             12.0f,      // 速度
             bulletAngle,// 角度
             1,          // ダメージ量
-            5.0f);      // 存在時間
+            5.0f,
+            nowWeapon);      // 存在時間
     }
     #endregion
 
@@ -326,6 +463,12 @@ public class ActorController : MonoBehaviour
         // 無敵時間発生
         invincibleTime = 0.6f;
     }
+    /// <summary>
+	/// 射撃アクション：突風
+	/// </summary>
+	private void ShotAction_Windblow()
+    {
+    }
     ///<summary>
     ///射撃アクション:雪玉
     ///</summary>
@@ -343,8 +486,8 @@ public class ActorController : MonoBehaviour
                 0.0f, //角度(rigidbodyで球を動かすので設定不要)
                 1, //ダメージ量
                 5.0f, //存在時間
-                newWeapon); //使用武器
-        obj.GetComponent<Rigidbody2D> ().velocity += velocity;
+                nowWeapon); //使用武器
+        obj.GetComponent<Rigidbody2D> ().linearVelocity += velocity;
     }
 
     ///<summary>
